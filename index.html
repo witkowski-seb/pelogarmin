@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peloton to Garmin Sync</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Peloton to Garmin Sync Tool</h1>
+        
+        <div class="auth-section">
+            <h2>Peloton Authentication</h2>
+            <div class="form-group">
+                <label for="pelotonEmail">Peloton Email:</label>
+                <input type="email" id="pelotonEmail" required>
+                <label for="pelotonPassword">Peloton Password:</label>
+                <input type="password" id="pelotonPassword" required>
+                <button id="pelotonAuth">Authenticate Peloton</button>
+            </div>
+        </div>
+
+        <div class="auth-section">
+            <h2>Garmin Authentication</h2>
+            <div class="form-group">
+                <label for="garminEmail">Garmin Email:</label>
+                <input type="email" id="garminEmail" required>
+                <label for="garminPassword">Garmin Password:</label>
+                <input type="password" id="garminPassword" required>
+                <button id="garminAuth">Authenticate Garmin</button>
+            </div>
+        </div>
+
+        <div class="sync-section">
+            <h2>Sync Settings</h2>
+            <div class="form-group">
+                <label for="daysBack">Days to Sync:</label>
+                <input type="number" id="daysBack" value="7" min="1" max="30">
+                <button id="startSync" disabled>Start Sync</button>
+            </div>
+        </div>
+
+        <div id="status" class="status" style="display: none;"></div>
+        <div id="progress" class="progress" style="display: none;">
+            <h3>Sync Progress</h3>
+            <div id="workoutList" class="workout-list"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
